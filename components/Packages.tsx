@@ -1,33 +1,41 @@
 import React from 'react';
 import SectionHead from './ui/SectionHead';
 import ScrollReveal from './ui/ScrollReveal';
-import { getRandomImages } from '@/lib/images';
-
-const imgs = getRandomImages(3);
 
 const PACKAGES = [
   {
-    title: 'Same Day Edit',
-    desc: 'Resumo emocionante editado no próprio dia e exibido na festa.',
-    img: imgs[0],
-    alt: 'Same Day Edit',
-    features: ['Edição em tempo recorde', 'Exibição na receção', '3–5 min de emoção'],
-    featured: false,
-  },
-  {
-    title: 'Filme Curto',
-    desc: 'O melhor do dia num filme cinematográfico com som, cor e ritmo.',
-    img: imgs[1],
-    alt: 'Filme Curto',
-    features: ['6–10 minutos', 'Preparativos, cerimónia e festa', 'Som direto dos votos'],
+    title: 'I DO',
+    desc: 'Uma cobertura pensada para que nada escape. Dois olhares atentos acompanham o dia do início ao fim, captando cada emoção, cada detalhe e cada momento especial, para um filme verdadeiramente completo.',
+    features: [
+      '2 videógrafos',
+      'Filme de 30–50 min*',
+      'Highlights',
+      'Color grading cinematográfico',
+      'Entrega em ficheiro digital',
+    ],
     featured: true,
   },
   {
-    title: 'Documentário Completo',
-    desc: 'Registo integral do vosso dia, do início ao fim.',
-    img: imgs[2],
-    alt: 'Documentário',
-    features: ['Cerimónia na íntegra', 'Duas câmaras + som', 'Filme longo + curto'],
+    title: 'Short',
+    desc: 'Uma abordagem mais simples e discreta, focada no que realmente importa. Os momentos mais marcantes são captados com sensibilidade, resultando num filme leve, natural e cheio de significado.',
+    features: [
+      '1 videógrafo',
+      'Filme de 08–15 min*',
+      'Color grading cinematográfico',
+      'Entrega em ficheiro digital',
+    ],
+    featured: false,
+  },
+  {
+    title: 'Vintage',
+    desc: 'Para um filme com personalidade única juntamos imagens em Super 8. O resultado é uma peça mais artística e emotiva, com uma estética que transforma memórias em algo ainda mais especial.',
+    features: [
+      '2 videógrafos',
+      'Filme de 30–50 min*',
+      'Highlights',
+      'Color grading cinematográfico',
+      'Entrega em ficheiro digital',
+    ],
     featured: false,
   },
 ];
@@ -56,20 +64,12 @@ export default function Packages() {
                 pkg.featured ? 'border-accent' : 'border-line'
               }`}
             >
-              <div className="aspect-[16/10] overflow-hidden relative">
-                <img
-                  src={pkg.img}
-                  alt={pkg.alt}
-                  className="w-full h-full object-cover transition-transform duration-[0.6s] ease-smooth group-hover:scale-[1.06]"
-                  loading="lazy"
-                />
+              <div className="p-8">
                 {pkg.featured && (
-                  <span className="absolute top-[14px] left-[14px] bg-accent text-white text-[0.65rem] tracking-[0.1em] uppercase py-[6px] px-3">
+                  <span className="inline-block bg-accent text-white text-[0.65rem] tracking-[0.1em] uppercase py-[6px] px-3 mb-4">
                     Mais pedido
                   </span>
                 )}
-              </div>
-              <div className="p-8">
                 <h3 className="font-serif text-[1.6rem] font-normal mb-3">
                   {pkg.title}
                 </h3>

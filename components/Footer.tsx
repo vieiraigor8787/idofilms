@@ -1,8 +1,8 @@
 import React from 'react';
 
 const FOOTER_LINKS = [
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Estúdio', href: '#estudio' },
+  { label: 'Sobre nós', href: '#sobre' },
+  { label: 'Portfólio', href: '#portfolio' },
   { label: 'Pacotes', href: '#pacotes' },
   { label: 'Contacto', href: '#contacto' },
 ];

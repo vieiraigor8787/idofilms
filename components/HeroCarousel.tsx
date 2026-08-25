@@ -1,59 +1,31 @@
 'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useRef } from 'react';
 import ScrollReveal from './ui/ScrollReveal';
-import { getRandomImages } from '@/lib/images';
 
-const imgs = getRandomImages(4);
-
-const SLIDES = [
-  { src: imgs[0], alt: 'Casamento em Sintra' },
-  { src: imgs[1], alt: 'Casamento na Toscana' },
-  { src: imgs[2], alt: 'Cerimónia no Porto' },
-  { src: imgs[3], alt: 'Festa em Lisboa' },
-];
-
-export default function HeroCarousel() {
-  const [current, setCurrent] = useState(0);
-  const total = SLIDES.length;
-
-  const goTo = useCallback(
-    (index: number) => setCurrent((index + total) % total),
-    [total],
-  );
-
-  // Auto-play
-  useEffect(() => {
-    const interval = setInterval(() => goTo(current + 1), 5000);
-    return () => clearInterval(interval);
-  }, [current, goTo]);
+export default function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section className="relative h-screen min-h-[640px] overflow-hidden bg-bg" id="top">
-      {/* Slides */}
+    <section className="relative h-screen min-h-[640px] overflow-hidden bg-black" id="top">
+      {/* Video Background */}
       <div className="absolute inset-0">
-        {SLIDES.map((slide, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-[1.2s] ease-smooth pointer-events-none hero-slide-overlay ${
-              i === current ? 'opacity-100 pointer-events-auto' : 'opacity-0'
-            }`}
-          >
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Counter */}
-      <div className="absolute top-1/2 right-6 lg:right-12 -translate-y-1/2 z-[3] font-serif text-6xl text-black/[0.06] font-light leading-none hidden lg:block">
-        <span id="heroCurrent">
-          {String(current + 1).padStart(2, '0')}
-        </span>
-        <span className="text-lg text-text-muted align-super">/{String(total).padStart(2, '0')}</span>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-75"
+        >
+          <source
+            src="/8%20-%20WEDDING%20EDITORIAL%20EDITORIAL%20-%20LISBOA.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
       </div>
 
       {/* Content */}
@@ -92,22 +64,6 @@ export default function HeroCarousel() {
             </div>
           </ScrollReveal>
         </div>
-      </div>
-
-      {/* Dots */}
-      <div className="absolute bottom-9 right-6 lg:right-12 z-[3] flex gap-[10px]">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            aria-label={`Slide ${i + 1}`}
-            className={`h-[2px] border-none cursor-pointer transition-all duration-300 ${
-              i === current
-                ? 'bg-accent w-14'
-                : 'bg-line-strong w-10'
-            }`}
-          />
-        ))}
       </div>
     </section>
   );

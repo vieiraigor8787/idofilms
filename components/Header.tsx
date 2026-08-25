@@ -3,11 +3,10 @@
 import React, { useEffect, useState } from 'react';
 
 const NAV_LINKS = [
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Galeria', href: '#galeria' },
-  { label: 'Estúdio', href: '#estudio' },
-  { label: 'Destinos', href: '#destinos' },
+  { label: 'Sobre nós', href: '#sobre' },
+  { label: 'Portfólio', href: '#portfolio' },
   { label: 'Pacotes', href: '#pacotes' },
+  { label: 'Contacto', href: '#contacto' },
 ] as const;
 
 export default function Header() {
