@@ -20,7 +20,7 @@ export default function HeroVideo() {
           className="w-full h-full object-cover opacity-75"
         >
           <source
-            src="/8%20-%20WEDDING%20EDITORIAL%20EDITORIAL%20-%20LISBOA.mp4"
+            src="https://pub-c79951ac1ba9489896eb7816441953a3.r2.dev/8%20-%20WEDDING%20EDITORIAL%20EDITORIAL%20-%20LISBOA.mp4"
             type="video/mp4"
           />
         </video>
