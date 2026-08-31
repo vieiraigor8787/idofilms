@@ -29,8 +29,12 @@ export default function Header() {
       }`}
     >
       {/* Logo */}
-      <a href="#top" className="font-serif text-2xl font-medium tracking-[0.02em]">
-        I DO <em className="text-accent not-italic italic">Films</em>
+      <a href="#top" className="inline-block shrink-0">
+        <img
+          src="/idofilms-logo.png"
+          alt="I DO Films"
+          className="h-10 w-auto"
+        />
       </a>
 
       {/* Desktop Nav */}
