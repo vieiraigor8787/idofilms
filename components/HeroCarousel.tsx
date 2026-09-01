@@ -32,7 +32,7 @@ export default function HeroVideo() {
       <div className="absolute bottom-0 left-0 right-0 z-[2] px-6 lg:px-12 pb-16 lg:pb-20">
         <div className="max-w-site mx-auto">
           <ScrollReveal>
-            <p className="text-[0.7rem] tracking-[0.18em] uppercase text-text-muted font-medium">
+            <p className="text-[0.7rem] tracking-[0.18em] uppercase text-white font-bold">
               Filmes de casamento · Portugal &amp; Europa
             </p>
           </ScrollReveal>
@@ -42,7 +42,7 @@ export default function HeroVideo() {
             </h1>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-text-muted text-[1.05rem] max-w-[480px] mt-6">
+            <p className="text-[#525252] text-[1.05rem] max-w-[480px] mt-6">
               Desde 2011, transformamos casamentos de luxo em obras cinematográficas — Lisboa, Sintra, Douro, Comporta e destinos por toda a Europa.
             </p>
           </ScrollReveal>
@@ -56,10 +56,9 @@ export default function HeroVideo() {
               </a>
               <a
                 href="#portfolio"
-                className="hover-reveal inline-block px-[34px] py-4 border border-line-strong text-text text-[0.78rem] tracking-[0.08em] uppercase bg-white/50 backdrop-blur-[4px] hover:border-accent hover:text-accent transition-all duration-300"
+                className=" inline-block px-[34px] py-4 border border-line-strong text-text text-[0.78rem] tracking-[0.08em] uppercase bg-white/50 backdrop-blur-[4px] hover:border-accent hover:text-accent transition-all duration-300"
               >
                 <span className="text-out">Ver portfolio</span>
-                <span className="text-in">Explorar filmes →</span>
               </a>
             </div>
           </ScrollReveal>

@@ -24,7 +24,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-6 lg:px-12 transition-all duration-[0.35s] ease-smooth ${
         scrolled
-          ? 'bg-bg/92 backdrop-blur-[16px] py-4 border-b border-line'
+          ? 'bg-accent/90 backdrop-blur-[16px] py-4 border-b border-line'
           : 'py-6'
       }`}
     >
@@ -44,7 +44,7 @@ export default function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[0.78rem] tracking-[0.06em] uppercase text-text-muted hover:text-accent transition-colors duration-[0.25s] hover-line"
+                className="text-[0.78rem] tracking-[0.06em] uppercase text-white hover:text-accent transition-colors duration-[0.25s] hover-line"
               >
                 {link.label}
               </a>
