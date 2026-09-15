@@ -11,13 +11,23 @@ interface VideoItem {
 }
 
 const VIDEOS: VideoItem[] = [
-  { vimeoId: 'XXXXXXXXX', title: 'Sintra · Portugal', desc: 'Filme curto — 8 min' },
-  { vimeoId: 'YYYYYYYYY', title: 'Douro · Portugal', desc: 'Documentário completo' },
-  { vimeoId: 'ZZZZZZZZZ', title: 'Comporta · Portugal', desc: 'Filme curto' },
-  { vimeoId: 'AAAAAAAAA', title: 'Lisboa · Portugal', desc: 'Filme curto — 10 min' },
-  { vimeoId: 'BBBBBBBBB', title: 'Toscana · Itália', desc: 'Casamento destino' },
-  { vimeoId: 'CCCCCCCCC', title: 'Provence · França', desc: 'Filme de autor' },
-  { vimeoId: 'DDDDDDDDD', title: 'Porto · Portugal', desc: 'Documentário completo' },
+  { vimeoId: '1224021323', title: 'Tamára & João', desc: 'Trailer — São João da Madeira' },
+  { vimeoId: '1032037623', title: 'Samm & Brad', desc: 'Trailer — Sintra' },
+  { vimeoId: '1206043982', title: 'Tamara & João', desc: 'Engagement Session — Coimbra' },
+  { vimeoId: '1149125036', title: 'Maria & João', desc: 'Trailer — Bussaco' },
+  { vimeoId: '1032047141', title: 'Maylis & Frederic', desc: 'Trailer — Austria' },
+  { vimeoId: '720684447', title: 'Thérèse & Martin', desc: 'Trailer — Santa Cruz' },
+  { vimeoId: '296841614', title: 'Brittany & Beau', desc: 'Teaser — Montemor' },
+  { vimeoId: '317057434', title: 'Lydia & Barry', desc: 'Engagement Session — New York' },
+  { vimeoId: '945742742', title: 'Wedding Editorial', desc: 'Editorial — Lisboa' },
+  { vimeoId: '1121462258', title: 'Kiran & Ace', desc: 'Trailer — Lisboa' },
+  { vimeoId: '388448614', title: 'Joana & Zé', desc: 'Teaser — Braga' },
+  { vimeoId: '1149321376', title: 'Danielle & Jeff', desc: 'Trailer — Cascais' },
+  { vimeoId: '776501571', title: 'Sandra & Tiago', desc: 'Trailer — Alenquer' },
+  { vimeoId: '355354108', title: 'May & Farid', desc: 'Teaser — Lisboa' },
+  { vimeoId: '1033646593', title: 'Sophia & Aziz', desc: 'Trailer — Lisboa' },
+  { vimeoId: '636375441', title: 'Peki & Zé Maria', desc: 'Trailer — Douro' },
+  { vimeoId: '225130369', title: 'Elisabeth & Robert', desc: 'Teaser — Lisboa' },
 ];
 
 export default function PortfolioCarousel() {
