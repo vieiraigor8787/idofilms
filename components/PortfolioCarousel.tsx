@@ -105,7 +105,7 @@ export default function PortfolioCarousel() {
               {VIDEOS.map((item, i) => (
                 <article
                   key={item.vimeoId}
-                  className="carousel-item flex-shrink-0 w-[clamp(300px,38vw,480px)] snap-start relative overflow-hidden aspect-[3/4] bg-bg-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-400 cursor-pointer group"
+                  className="carousel-item flex-shrink-0 w-[clamp(300px,38vw,480px)] snap-start relative overflow-hidden aspect-[3/2] bg-bg-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-400 cursor-pointer group"
                   onClick={() => openModal(i)}
                 >
                   {/* Vimeo thumbnail */}
