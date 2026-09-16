@@ -6,11 +6,57 @@ import ScrollReveal from './ui/ScrollReveal';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    nome: "",
+    email: "",
+    data: "",
+    local: "",
+    mensagem: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setSubmitted(true);
-  };
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error ?? "Erro ao enviar.");
+        return;
+      }
+
+      setSubmitted(true);
+
+      setForm({
+        nome: "",
+        email: "",
+        data: "",
+        local: "",
+        mensagem: "",
+      });
+
+    } catch (error) {
+      console.error(error);
+
+      alert("Ocorreu um erro ao enviar o formulário.");
+
+    } finally {
+      setLoading(false);
+    }
+
+  }
 
   return (
     <section className="py-[100px] bg-bg-white" id="contacto">
@@ -55,65 +101,79 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="flex flex-col gap-[6px]">
                 <label htmlFor="nome" className="text-[0.7rem] tracking-[0.1em] uppercase text-text-muted">
-                  Nome
+                  👤 Nome
                 </label>
                 <input
                   id="nome"
                   type="text"
                   placeholder="O vosso nome"
                   required
+                  value={form.nome}
+                  onChange={(e) => setForm({ ...form, nome: e.target.value })}
                   className="bg-bg border border-line py-[14px] px-4 text-text font-sans text-[0.92rem] outline-none focus:border-accent focus:bg-white transition-colors duration-[0.25s]"
                 />
               </div>
               <div className="flex flex-col gap-[6px]">
                 <label htmlFor="email" className="text-[0.7rem] tracking-[0.1em] uppercase text-text-muted">
-                  E-mail
+                 📧 E-mail
                 </label>
                 <input
                   id="email"
                   type="email"
                   placeholder="ovosso@email.com"
                   required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="bg-bg border border-line py-[14px] px-4 text-text font-sans text-[0.92rem] outline-none focus:border-accent focus:bg-white transition-colors duration-[0.25s]"
                 />
               </div>
               <div className="flex flex-col gap-[6px]">
                 <label htmlFor="data" className="text-[0.7rem] tracking-[0.1em] uppercase text-text-muted">
-                  Data do casamento
+                 📅 Data do Casamento
                 </label>
                 <input
                   id="data"
                   type="date"
+                  value={form.data}
+                  onChange={(e) => setForm({ ...form, data: e.target.value })}
                   className="bg-bg border border-line py-[14px] px-4 text-text font-sans text-[0.92rem] outline-none focus:border-accent focus:bg-white transition-colors duration-[0.25s]"
                 />
               </div>
               <div className="flex flex-col gap-[6px]">
                 <label htmlFor="local" className="text-[0.7rem] tracking-[0.1em] uppercase text-text-muted">
-                  Local do casamento
+                 📍 Local do casamento
                 </label>
                 <input
                   id="local"
                   type="text"
                   placeholder="Sintra, Douro, Toscana..."
+                  value={form.local}
+                  onChange={(e) => setForm({ ...form, local: e.target.value })}
                   className="bg-bg border border-line py-[14px] px-4 text-text font-sans text-[0.92rem] outline-none focus:border-accent focus:bg-white transition-colors duration-[0.25s]"
                 />
               </div>
               <div className="flex flex-col gap-[6px]">
                 <label htmlFor="msg" className="text-[0.7rem] tracking-[0.1em] uppercase text-text-muted">
-                  Deixe-nos uma mensagem
+                 💌 Deixe-nos uma mensagem
                 </label>
                 <textarea
                   id="msg"
                   placeholder="Contem-nos um pouco da vossa história..."
+                  value={form.mensagem}
+                  onChange={(e) => setForm({ ...form, mensagem: e.target.value })}
                   className="bg-bg border border-line py-[14px] px-4 text-text font-sans text-[0.92rem] outline-none focus:border-accent focus:bg-white transition-colors duration-[0.25s] resize-y min-h-[100px]"
                 />
               </div>
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={loading || submitted}
                 className="py-4 bg-text text-white border-none text-[0.78rem] tracking-[0.08em] uppercase cursor-pointer hover:bg-accent transition-colors duration-300 disabled:opacity-50 disabled:pointer-events-none"
               >
-                {submitted ? 'Enviado — obrigado!' : 'Enviar pedido'}
+                {loading
+                  ? "A enviar..."
+                  : submitted
+                    ? "Enviado — obrigado!"
+                    : "Enviar pedido"}
               </button>
             </form>
           </ScrollReveal>
