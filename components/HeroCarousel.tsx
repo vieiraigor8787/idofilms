@@ -8,22 +8,26 @@ export default function HeroVideo() {
 
   return (
     <section className="relative h-screen min-h-[640px] overflow-hidden bg-black" id="top">
-      {/* Video Background */}
+      {/* Vimeo Video Background */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover opacity-75"
-        >
-          <source
-            src="https://pub-d4177ac300944da59b8147082ea010b1.r2.dev/wedding-editorial-lisboa.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <iframe
+          title="vimeo-player"
+          src="https://player.vimeo.com/video/1032037623?h=b636bf82f4&background=1&autoplay=1&loop=1&muted=1&controls=0&dnt=1"
+          className="absolute inset-0 w-full h-full object-cover opacity-75"
+          style={{
+            width: '100vw',
+            height: '56.25vw',      // 16:9 aspect ratio (viewport-based)
+            minHeight: '100vh',
+            minWidth: '177.77vh',   // 16:9 inverse (viewport-based)
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allowFullScreen
+        />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
       </div>
