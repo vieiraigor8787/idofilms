@@ -11,8 +11,8 @@ interface VideoItem {
 }
 
 const VIDEOS: VideoItem[] = [
-  { vimeoId: '1224021323', title: 'Tamára & João', desc: 'Trailer — São João da Madeira' },
   { vimeoId: '1032037623', title: 'Samm & Brad', desc: 'Trailer — Sintra' },
+  { vimeoId: '1224021323', title: 'Tamára & João', desc: 'Trailer — São João da Madeira' },
   { vimeoId: '1206043982', title: 'Tamara & João', desc: 'Engagement Session — Coimbra' },
   { vimeoId: '1149125036', title: 'Maria & João', desc: 'Trailer — Bussaco' },
   { vimeoId: '1032047141', title: 'Maylis & Frederic', desc: 'Trailer — Austria' },
@@ -29,6 +29,51 @@ const VIDEOS: VideoItem[] = [
   { vimeoId: '636375441', title: 'Peki & Zé Maria', desc: 'Trailer — Douro' },
   { vimeoId: '225130369', title: 'Elisabeth & Robert', desc: 'Teaser — Lisboa' },
 ];
+
+/* ──────── Video thumb with IntersectionObserver ──────── */
+function VideoThumb({ vimeoId, title }: { vimeoId: string; title: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // once loaded, keep it
+        }
+      },
+      { rootMargin: '400px' }, // pre-load 400px before entering viewport
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="w-full h-full">
+      {inView ? (
+        <iframe
+          src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1&playsinline=1&background=1`}
+          className="w-full h-full object-cover pointer-events-none scale-[1.02]"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title={title}
+        />
+      ) : (
+        <img
+          src={`https://vumbnail.com/${vimeoId}_large.jpg`}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+}
 
 export default function PortfolioCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -89,7 +134,7 @@ export default function PortfolioCarousel() {
               title={
                 <>
                   Histórias que{' '}
-                  <em className="italic text-accent not-italic">se veem</em> — e se
+                  <em className="italic text-accent not-italic">se veem</em> e se
                   sentem.
                 </>
               }
@@ -108,15 +153,11 @@ export default function PortfolioCarousel() {
                   className="carousel-item flex-shrink-0 w-[clamp(300px,38vw,480px)] snap-start relative overflow-hidden aspect-[3/2] bg-bg-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-400 cursor-pointer group"
                   onClick={() => openModal(i)}
                 >
-                  {/* Vimeo thumbnail */}
-                  <img
-                    src={`https://vumbnail.com/${item.vimeoId}_large.jpg`}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-[0.6s] ease-smooth"
-                    loading="lazy"
-                  />
+                  {/* Looping video thumb (lazy via IntersectionObserver) */}
+                  <VideoThumb vimeoId={item.vimeoId} title={item.title} />
+
                   {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors duration-300 z-10">
                     <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <svg
                         className="w-6 h-6 text-text ml-1"
@@ -128,7 +169,7 @@ export default function PortfolioCarousel() {
                     </div>
                   </div>
                   {/* Meta */}
-                  <div className="carousel-meta">
+                  <div className="carousel-meta z-10">
                     <h3 className="font-serif text-[1.4rem] font-normal">{item.title}</h3>
                     <p className="text-[0.82rem] text-text-muted mt-1">{item.desc}</p>
                   </div>

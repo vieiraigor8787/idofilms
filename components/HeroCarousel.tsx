@@ -32,18 +32,18 @@ export default function HeroVideo() {
       <div className="absolute bottom-0 left-0 right-0 z-[2] px-6 lg:px-12 pb-16 lg:pb-20">
         <div className="max-w-site mx-auto">
           <ScrollReveal>
-            <p className="text-[0.7rem] tracking-[0.18em] uppercase text-white font-bold">
+            <p className="text-[0.5rem] lg:text-[0.7rem] tracking-[0.18em] uppercase text-white font-bold">
               Filmes de casamento · Portugal &amp; Europa
             </p>
           </ScrollReveal>
           <ScrollReveal>
             <h1 className="font-serif font-light text-[clamp(3rem,7vw,5.5rem)] leading-[1.1] tracking-[-0.01em] max-w-[820px] mt-0">
-              O vosso dia, filmado como <em className="italic text-accent not-italic">cinema</em>.
+             Histórias únicas. Emoções universais. <em className="italic text-accent not-italic"> Filmes para sempre</em>.
             </h1>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-[#525252] text-[1.05rem] max-w-[480px] mt-6">
-              Desde 2011, transformamos casamentos de luxo em obras cinematográficas — Lisboa, Sintra, Douro, Comporta e destinos por toda a Europa.
+            <p className="text-[#525252] lg:text-[1.05rem] max-w-[650px] mt-6">
+             Referência internacional em videografia de casamento, a I DO FILMS une sensibilidade e estética cinematográfica para eternizar histórias de amor. Filmamos em qualquer parte do mundo, porque a emoção não tem fronteiras e cada detalhe merece ser único.
             </p>
           </ScrollReveal>
           <ScrollReveal>

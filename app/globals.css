@@ -93,7 +93,8 @@
   transform: translateY(0);
 }
 .carousel-item:hover img,
-.carousel-item:hover video {
+.carousel-item:hover video,
+.carousel-item:hover iframe {
   transform: scale(1.04);
 }
 

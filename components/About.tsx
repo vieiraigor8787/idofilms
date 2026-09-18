@@ -46,16 +46,15 @@ export default function About() {
             <h2 className="font-serif font-light text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.01em] mt-3">
               Puro Cinema
             </h2>
-            <p className="text-text-muted mb-[18px] text-[0.95rem] mt-4">
+            <p className="text-text-muted text-justify mb-[18px] text-[0.95rem] mt-4">
               A <strong className="text-text font-medium">I DO FILMS</strong> nasceu em 2011 com o propósito de trazer uma abordagem verdadeiramente cinematográfica ao vídeo de casamento, aliando estética, sensibilidade e uma elevada qualidade de imagem para captar momentos íntimos que merecem ser eternizados.
-            </p>
-            <p className="text-text-muted mb-[18px] text-[0.95rem]">
+                <br /><br />
+            
               A singularidade de cada relação é o ponto de partida dos nossos filmes. Em cada abraço, em cada palavra, em cada gesto e emoção, nasce uma história única e impossível de repetir.
-            </p>
-            <p className="text-text-muted mb-[18px] text-[0.95rem]">
+            <br /><br />
               Mais do que filmar, procuramos interpretar e sentir cada momento, olhando para além das nossas lentes para criar um filme que será, verdadeiramente, único e inesquecível.
-            </p>
-            <p className="text-text-muted text-[0.95rem]">
+           <br /><br />
+         
               Ao longo dos anos crescemos e aperfeiçoámos técnicas que nos permitiram tornar-nos uma referência na área do wedding videography. Acompanhamos as tendências internacionais, desenvolvendo cada história com uma perspetiva única.
             </p>
           </ScrollReveal>
