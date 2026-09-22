@@ -14,7 +14,7 @@ export default function About() {
           <ScrollReveal className="grid grid-cols-2 gap-[10px]">
             <figure className="overflow-hidden aspect-[3/4] row-span-2 h-full">
               <img
-                src={imgs[0]}
+                src="/P1028574 2.jpg"
                 alt="Behind the scenes"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -22,7 +22,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src={imgs[1]}
+                src="/P1023989.jpg"
                 alt="Casamento"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -30,7 +30,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src={imgs[2]}
+                src="/P1054695.jpg"
                 alt="Cerimónia"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -66,13 +66,13 @@ export default function About() {
             <h2 className="font-serif font-light text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.01em] mt-3">
               Worldwide lovestories
             </h2>
-            <p className="text-text-muted mb-[18px] text-[0.95rem] mt-4">
+            <p className="text-text-muted mb-[18px] text-[0.95rem] mt-4 text-justify">
               O mundo pode parecer vasto, mas quando se trata de histórias de amor, ele torna-se surpreendentemente pequeno.
             </p>
-            <p className="text-text-muted mb-[18px] text-[0.95rem]">
+            <p className="text-text-muted mb-[18px] text-[0.95rem] text-justify">
               Ao longo dos anos, tivemos o privilégio de filmar casamentos em diferentes partes do mundo, acompanhando histórias únicas entre diversas nacionalidades, culturas e tradições.
             </p>
-            <p className="text-text-muted text-[0.95rem]">
+            <p className="text-text-muted text-[0.95rem] text-justify">
               Cada lugar tem a sua identidade, cada cerimónia os seus rituais, mas a emoção é universal. E é essa linguagem comum que nos permite contar histórias que atravessam fronteiras.
             </p>
           </ScrollReveal>
@@ -81,7 +81,7 @@ export default function About() {
           <ScrollReveal className="grid grid-cols-2 gap-[10px]">
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src={imgs[1]}
+                src="/IMG_5551.jpg"
                 alt="Destino internacional"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -89,7 +89,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4] row-span-2 h-full">
               <img
-                src={imgs[2]}
+                src="/P1043360.jpg"
                 alt="Casamento destino"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -97,7 +97,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src={imgs[0]}
+                src="/P1020498.jpg"
                 alt="Cerimónia internacional"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"

@@ -46,7 +46,7 @@ export default function HeroVideo() {
             </h1>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-[#525252] lg:text-[1.05rem] max-w-[650px] mt-6">
+            <p className="text-[#525252] lg:text-[1.05rem] max-w-[650px] mt-6 text-justify">
              Referência internacional em videografia de casamento, a I DO FILMS une sensibilidade e estética cinematográfica para eternizar histórias de amor. Filmamos em qualquer parte do mundo, porque a emoção não tem fronteiras e cada detalhe merece ser único.
             </p>
           </ScrollReveal>

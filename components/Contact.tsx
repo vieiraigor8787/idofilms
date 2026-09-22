@@ -59,7 +59,8 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-[100px] bg-bg-white" id="contacto">
+    <section className="bg-[url(/3.png)] bg-no-repeat pb-10" id="contacto">
+      <div className="absolute w-full h-full bg-white bg-opacity-80 left-0" />ß
       <div className="max-w-site mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[80px] items-start">
           {/* Info */}
@@ -69,7 +70,7 @@ export default function Contact() {
               Vamos contar a vossa história?
             </h2>
             <p className="text-text-muted mt-4 max-w-[400px]">
-              Preencham o formulário com a vossa data e local. Respondemos em menos de 48 horas.
+              Preencha o formulário com a vossa data e local. Respondemos em menos de 48 horas.
             </p>
             <div className="mt-8 flex flex-col">
               <a
@@ -167,7 +168,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading || submitted}
-                className="py-4 bg-text text-white border-none text-[0.78rem] tracking-[0.08em] uppercase cursor-pointer hover:bg-accent transition-colors duration-300 disabled:opacity-50 disabled:pointer-events-none"
+                className="py-4 bg-text text-text-muted border-none text-[0.78rem] tracking-[0.08em] uppercase cursor-pointer hover:bg-accent transition-colors duration-300 disabled:opacity-50 disabled:pointer-events-none"
               >
                 {loading
                   ? "A enviar..."
