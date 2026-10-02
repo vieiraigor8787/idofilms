@@ -42,8 +42,10 @@ export default function RootLayout({
       lang="pt-PT"
       className={`${cormorantGaramond.variable} ${dmSans.variable}`}
     >
-      <body>{children}</body>
+      <body>
       <GoogleTagManager gtmId="GTM-TNFKCZ9K" />
+      {children}
+      </body>
     </html>
   );
 }
