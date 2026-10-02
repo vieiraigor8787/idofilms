@@ -14,7 +14,7 @@ export default function About() {
           <ScrollReveal className="grid grid-cols-2 gap-[10px]">
             <figure className="overflow-hidden aspect-[3/4] row-span-2 h-full">
               <img
-                src="/P1028574 2.jpg"
+                src="/1.png"
                 alt="Behind the scenes"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -22,7 +22,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src="/P1023989.jpg"
+                src="/IMG_5863.jpg"
                 alt="Casamento"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"
@@ -30,7 +30,7 @@ export default function About() {
             </figure>
             <figure className="overflow-hidden aspect-[3/4]">
               <img
-                src="/P1054695.jpg"
+                src="/P1028574 2.jpg"
                 alt="Cerimónia"
                 className="w-full h-full object-cover transition-transform duration-[0.5s] ease-smooth hover:scale-[1.03]"
                 loading="lazy"

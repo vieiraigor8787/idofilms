@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import './globals.css';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
       className={`${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body>{children}</body>
+      <GoogleTagManager gtmId="GTM-TNFKCZ9K" />
     </html>
   );
 }
